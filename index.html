@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs Analytics Portal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+      overflow-x: hidden; /* Prevent horizontal scrollbar */
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px 10px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .dashboard-container {
+      max-width: 1600px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .tableauPlaceholder {
+      margin-bottom: 40px;
+    }
+
+    object.tableauViz {
+      border: none;
+      width: 100% !important;
+      height: 90vh !important; /* Full screen height on large devices */
+    }
+
+    /* 📱 Responsive adjustments */
+    @media (max-width: 1200px) {
+      object.tableauViz {
+        height: 80vh !important;
+      }
+    }
+
+    @media (max-width: 992px) {
+      header {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+      object.tableauViz {
+        height: 70vh !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.3rem;
+        padding: 12px;
+      }
+      object.tableauViz {
+        height: 65vh !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header {
+        font-size: 1.2rem;
+        padding: 10px;
+      }
+      .dashboard-container {
+        padding: 0 5px;
+      }
+      object.tableauViz {
+        height: 60vh !important; /* Smaller screens = less height */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Jobs Analytics Portal
+  </header>
+
+  <div class="dashboard-container">
+    <!-- Dashboard 1 -->
+    <div class='tableauPlaceholder' id='viz1758048577220' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='Dashboard11' src='https://public.tableau.com/static/images/Bo/Book2_17580470067360/Dashboard11/1_rss.png' style='border: none' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'></object>
+    </div>
+
+    <!-- Dashboard 2 -->
+    <div class='tableauPlaceholder' id='viz1758048635005' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='Dashboard22' src='https://public.tableau.com/static/images/Bo/Book2_17580470067360/Dashboard22/1_rss.png' style='border: none' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'></object>
+    </div>
+  </div>
+
+  <!-- Tableau JS Loader -->
+  <script type='text/javascript'>
+    function loadViz(divId, name, staticImage) {
+      var divElement = document.getElementById(divId);
+      var vizElement = divElement.getElementsByTagName('object')[0];
+
+      vizElement.innerHTML = `
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='${name}' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='${staticImage}' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+        <param name='filter' value='publish=yes' />
+      `;
+
+      // Width always 100%, height is managed by CSS (media queries)
+      vizElement.style.width = "100%";
+
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+
+    // Load both dashboards
+    loadViz(
+      'viz1758048577220',
+      'Book2_17580470067360/Dashboard11',
+      'https://public.tableau.com/static/images/Bo/Book2_17580470067360/Dashboard11/1.png'
+    );
+
+    loadViz(
+      'viz1758048635005',
+      'Book2_17580470067360/Dashboard22',
+      'https://public.tableau.com/static/images/Bo/Book2_17580470067360/Dashboard22/1.png'
+    );
+  </script>
+</body>
+</html>
